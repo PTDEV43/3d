@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d14"><meta name="description" content="PT 3D Fighting Studio — browser-based 3D fight animation playground.">
+<title>PT 3D Fighting Studio</title>
+</head>
+<body>
+<div id="app">
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">PT</span><span><strong>PT FIGHTING STUDIO</strong><small>3D ANIMATION WORKSPACE</small></span></a><div class="top-status">● LOCAL SESSION <span>V1.0.0</span></div></header>
+<main class="workspace">
+<section class="stage-panel">
+<div class="stage-heading"><div><span class="eyebrow">SCENE VIEWPORT</span><h1>Fight Arena <span class="live-pill">LIVE</span></h1></div><div><button id="resetCamera">↺</button><button id="fullscreen">⛶</button></div></div>
+<div class="viewport-wrap" id="viewportWrap"><div id="viewport"></div><div class="overlay">REALTIME 3D PREVIEW</div><div class="fighter-label blue-label">BLUE FIGHTER</div><div class="fighter-label red-label">RED FIGHTER</div><div class="hint">DRAG TO ORBIT · SCROLL TO ZOOM</div><div id="toast"></div></div>
+<div class="transport"><div><button id="playPause">▶ PLAY</button><button id="stop">■ STOP</button><button id="record">● RECORD WEBM</button></div><span id="timeNow">00:00 / 00:08</span></div>
+<div class="timeline"><input id="timelineRange" type="range" min="0" max="8" step=".01" value="0"></div>
+</section>
+<aside class="control-panel">
+<section><span class="eyebrow">ANIMATION LIBRARY</span><h2>Combat Actions</h2><p>Choose a move to preview in the arena.</p><div class="action-grid">
+<button class="action-card active" data-action="idle">◉ <b>Idle</b><small>READY STANCE</small></button>
+<button class="action-card" data-action="punch">✊ <b>Punch</b><small>STRAIGHT HIT</small></button>
+<button class="action-card" data-action="kick">➤ <b>Kick</b><small>FRONT KICK</small></button>
+<button class="action-card" data-action="sweep">⌁ <b>Sweep</b><small>LOW SWEEP</small></button>
+<button class="action-card" data-action="block">▣ <b>Block</b><small>HIGH GUARD</small></button>
+<button class="action-card" data-action="dodge">↝ <b>Dodge</b><small>SLIP BACK</small></button>
+</div></section>
+<section><span class="eyebrow">CHARACTER SETTINGS</span><h2>Fighters</h2><label>Blue Fighter <input id="blueColor" type="color" value="#247bff"></label><label>Red Fighter <input id="redColor" type="color" value="#f04452"></label></section>
+<section><span class="eyebrow">SCENE SETTINGS</span><h2>Playback</h2><label>Speed <strong id="speedValue">1.0×</strong></label><input id="speedRange" type="range" min=".25" max="2" step=".25" value="1"><label><input id="loopToggle" type="checkbox" checked> Auto loop</label><label><input id="labelsToggle" type="checkbox" checked> Show labels</label></section>
+<div class="panel-footer">THREE.JS ENGINE · WEBGL · PROCEDURAL RIG V1</div>
+</aside>
+</main><footer>PT 3D FIGHTING STUDIO · V1 · WEBM EXPORT · LOCAL ONLY</footer>
+</div><script type="module" src="/src/main.js"></script>
+</body></html>
