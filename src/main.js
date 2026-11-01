@@ -38,7 +38,7 @@ function fighter(color,x,face){
  const arms=[],legs=[];
  for(const side of [-1,1]){const shoulder=new THREE.Group();shoulder.position.set(side*.4,1.95,0);body.add(shoulder);const upper=new THREE.Mesh(new THREE.CapsuleGeometry(.12,.34,5,10),skin);upper.position.y=-.22;shoulder.add(upper);const elbow=new THREE.Group();elbow.position.y=-.42;shoulder.add(elbow);const fore=new THREE.Mesh(new THREE.CapsuleGeometry(.105,.32,5,10),skin);fore.position.y=-.2;elbow.add(fore);const glove=new THREE.Mesh(new THREE.SphereGeometry(.16,12,10),cloth);glove.position.y=-.47;elbow.add(glove);arms.push({shoulder,elbow,side});
  const hip=new THREE.Group();hip.position.set(side*.2,.98,0);body.add(hip);const thigh=new THREE.Mesh(new THREE.CapsuleGeometry(.15,.48,5,10),skin);thigh.position.y=-.3;hip.add(thigh);const knee=new THREE.Group();knee.position.y=-.6;hip.add(knee);const shin=new THREE.Mesh(new THREE.CapsuleGeometry(.11,.48,5,10),skin);shin.position.y=-.3;knee.add(shin);const foot=new THREE.Mesh(new THREE.BoxGeometry(.22,.13,.4),skin);foot.position.set(0,-.57,.1);knee.add(foot);legs.push({hip,knee,side});}
- return {root,body,arms,legs,color};
+ return {root,body,arms,legs,color:cloth};
 }
 const blue=fighter('#247bff',-1.65,-Math.PI/2), red=fighter('#f04452',1.65,Math.PI/2);
 const clamp=THREE.MathUtils.clamp, clock=new THREE.Clock(), duration=8;
